@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCOLHA SUA FUNÇÃO (FILIAÇÃO)</title>
+    <link rel="stylesheet" href="/futpelada/app/static/css/affiliation.css">
+</head>
+
+<body>
+    <header class="main_header">
+        <div class="main_header_nav">    
+            <img class="logoheader" src="/futpelada/app/static/images/logofutpeladaheader-removebg-preview.png" alt="logo futpelada">
+            <h2 class="nome_do_site">FUTPELADA</h2>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>FILIAÇÃO</h1>
+            <div class="all_buttons">
+                <div class="button">
+                    <h2>CRIAR UM TIME</h2>
+                    <form action="/criar_time" method="post">
+                        <button type="submit" class="button-link">
+                            <img class="image" src="/futpelada/app/static/images/time-de-futebol.png" alt="time de futebol">
+                        </button>
+                    </form>
+                </div>
+
+                <div class="button">
+                    <h2>UNIR-SE A UM TIME</h2>
+                    <form action="/unir" method="post">
+                        <button type="submit" class="button-link">
+                            <img class="image" src="/futpelada/app/static/images/unir_se_a_um_time.png" alt="aperto de mãos">
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="button">
+                    <h2>SER ÁRBITRO</h2>
+                    <form action="/ser_arbitro" method="post">
+                        <button type="submit" class="button-link">
+                            <img class="image" src="/futpelada/app/static/images/ser_árbitro.png" alt="apito de árbitro">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

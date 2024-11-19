@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="/static/css/tela_entrar.css">
+    <script defer src="/static/js/tela_entrar.js"></script>
+</head>
+<body>
+    
+        <header class="main_header">
+
+            <div class="main_header_nav">    
+                <a class="a" href="/templates/index.html"><img class="logoheader" src="/static/images/logofutpeladaheader-removebg-preview.png" alt="logo futpelada"></a>
+                <h2 class="nome_do_site">FUTPELADA</h2>
+                <div class="main_header_nav_itens">
+                    <p class="text">AINDA NÃO TEM UMA CONTA?</p>
+                    <a href="/templates/tela_cadastro.html" class="button_cadastrese">CADASTRE-SE</a>
+                </div>              
+            </div>
+        </header>
+
+        <main>
+                <div class="form-container">
+                    <form action="#">
+                        <label for="email">E-MAIL:</label>
+                        <input type="email" id="email" name="email" required>
+        
+                        <label for="senha">SENHA:</label>
+                        <div class="password-container">
+                            <input type="password" id="senha" name="senha" required>
+                            <img id="togglePassword" src="/static/images/olho_mostrar.png" alt="mostrar Senha" class="eye-icon">
+                        </div>
+
+                        <div class="forgot-password">
+                            <a href="/templates/forgotpassword.html">Esqueci minha senha</a>
+                        </div>
+
+                        <button class="button_entrar" type="submit">ENTRAR</button>
+        
+                    </form>
+                </div>
+        </main>
+</body>
+</html>
