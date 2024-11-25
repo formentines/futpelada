@@ -19,7 +19,7 @@
     font-family: var(--FONTE_PADRAO);
 }
 body{
-    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(0, 255, 87, 0.7)), url("/static/images/imagemdefundotelainicial.jpg");
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(0, 255, 87, 0.7)), url("/futpelada/app/static/images/imagemdefundotelainicial.jpg");
     border: 0;
     margin: 0;
 }
