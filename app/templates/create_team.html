@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIE SEU TIME</title>
+    <link rel="stylesheet" href="/futpelada/app/static/css/create_team.css">
+</head>
+<body> 
+    <header class="main_header">
+        <div class="main_header_nav">    
+            <img class="logoheader" src="/futpelada/app/static/images/logofutpeladaheader-removebg-preview.png" alt="logo futpelada">
+            <h2 class="nome_do_site">FUTPELADA</h2>
+        </div>
+    </header>
+
+    <main>
+        <h1>Criação de Time</h1>
+        <form class="main_form" action="" method="POST" enctype="multipart/form-data"> <!-- action - colocar o nome do backend -->
+            <div class="insert_info_time">
+                <label for="nome_time">Nome do Time:</label>
+                <input type="text" id="nome-time" name="nome-time" required>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="4" required></textarea>
+            </div>
+            <div class="categorias">
+                <select class="categoria" id="categoria" name="categoria" required>
+                    <option value="">Categoria</option>
+                    <option value="futebol">Futsal</option>
+                    <option value="basquete">Fut7</option>
+                    <option value="volei">Society</option>
+                    <option value="volei">Campo</option>
+                </select>
+            </div>
+            <div class="adicionar_foto">
+                <label for="foto-perfil" class="foto-perfil-label">
+                    <input type="file" id="foto-perfil" name="foto-perfil" accept="image/*" required>
+                    <span class="foto-perfil">+</span>
+                </label>
+            </div>
+
+            <button type="submit">Criar Time</button>
+        </form>
+    </main>
+
+</body>
+</html>
