@@ -130,9 +130,4 @@ def init_app(app):
 
                 return redirect(url_for('index'))
         
-        return render_template('resetpassword'), token==token
-    
-
-        
-
-        
+        return render_template('resetpassword'), token==token   
