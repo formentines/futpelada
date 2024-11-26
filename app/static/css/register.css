@@ -1,0 +1,204 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root {
+    --MAIN: #00FF57;
+    --SUB: #005B1F;
+    --GRASS: #7CFC00;
+    --BACKGROUDS: #1A1A1A;
+    --FORMS: #2F2F2F;
+    --INPUTS: #BABABA;
+
+    --FONTE_PADRAO: "Montserrat", sans-serif;
+    --FONTE_DESTAQUE: "Bebas Neue", sans-serif;
+}
+*{
+    font-family: var(--FONTE_PADRAO);
+}
+body{
+    background-image: url("/app/static/images/imagemdefundotelainicial.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    margin: 0;
+    height: 100vh;
+    font-family: var(--FONTE_PADRAO);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    display: flex;
+}
+
+header {
+    display: block;
+}
+
+.nome_do_site {
+    color: white;
+    font-family: var(--FONTE_PADRAO);
+    margin-left: 10px;
+}
+
+.main_header {
+    background-color: var(--BACKGROUDS);
+    position: fixed ;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-bottom: .5px solid var(--labels-light-quaternary);
+    box-sizing: border-box;
+}
+
+.main_header_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_header_nav{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.main_header_nav_itens {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.logoheader {
+    width: 80px;
+}
+.link_logo {
+    height: 80px;
+}
+
+.text {
+    color: white;
+}
+.main_form {
+    padding-block-start: 18px;
+    
+}
+
+.all_inputs {
+    background-color: var(--FORMS) ;
+    color: white;
+    width: 350px;
+    height: 450px;
+    margin-top: 80px;
+    font-family: var(--FONTE_PADRAO);
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    padding-block-start: 0px
+}
+
+.alinhar {
+    padding: 0px;
+}
+
+.input {
+    border-color: var(--SUB);
+    border-radius: 10px;
+    background-color: var(--INPUTS);
+    width: 300px;
+    height: 30px;
+}
+.button_entrar {
+    display: abslute;
+    background-color: var(--MAIN);
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    color: var(--BACKGROUDS);
+}
+
+.button_entrar:hover {
+    color: white;
+    background-color: var(--SUB);
+}
+.button_cadastrar {
+    background-color: var(--MAIN);
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}
+
+fieldset {
+    border: 0;
+    padding: 10px;
+    margin: 0px;
+    margin-left: 10px;
+    width: 308px;
+    align-self: center;
+}
+
+legend {
+    padding: 0;
+    font-size: 12px;
+    width: 300px;
+    text-align: start;
+}
+
+label {
+    display: block;
+    margin: 0px;
+    margin-bottom: 3px;
+    font-size: 12px;
+}
+
+.text_label {
+    width: 300px;
+    text-align: start;
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+.text_label_senha {
+    margin-top: -15px;
+    margin-left: 15px;
+    text-align: start;
+}
+
+select {
+    width: calc(30% - 10px);
+    /*margin-right: 10px;*/
+    padding: 5px;
+    background-color: var(--INPUTS);
+    border-radius: 10px;
+    border-color: var(--SUB);
+    width: 100px;
+    height: 30px;
+}
+
+.button_date {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label_input {
+    width: 100px;
+    height: 53px;
+    margin: 1.5px;
+}
