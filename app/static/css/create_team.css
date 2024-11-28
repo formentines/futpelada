@@ -142,35 +142,13 @@ h1 {
 }
 textarea {
     border-radius: 10px;
-    width: 100%;
-    padding: 10px;
-    background-color: #2F2F2F;
-    color: white;
-    border-radius: 5px;
-    border: 1px solid #00FF57;
 }
-select {
+.nome_time, .team_social, select, textarea {
     width: 100%;
     padding: 10px;
     background-color: #2F2F2F;
     color: white;
-    border-radius: 5px;
-    border: 1px solid #00FF57;
-}
-.team_social {
-    width: 100%;
-    padding: 10px;
-    background-color: #2F2F2F;
-    color: white;
-    border-radius: 5px;
-    border: 1px solid #00FF57;
-}
-.nome_time {
-    width: 100%;
-    padding: 10px;
-    background-color: #2F2F2F;
-    color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #00FF57;
 }
 select:focus {
