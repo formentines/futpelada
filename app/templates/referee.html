@@ -1,12 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEJA ÁRBITRO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SER ÁRBITRO</title>
+  <link rel="stylesheet" href="/app/static/css/referee.css">
+  <script defer src="/app/static/js/referee.js"></script>
 </head>
+
 <body>
-    <h1>{{ mensagem }}</h1>
-    <!-- Aqui você pode adicionar mais detalhes -->
+    <header class="main_header">
+        <div class="main_header_nav">    
+            <img class="logoheader" src="/app/static/images/logofutpeladaheader-removebg-preview.png" alt="logo futpelada">
+            <h2 class="nome_do_site">FUTPELADA</h2>
+        </div>
+    </header>
+    <main>
+        <div class="main_container">
+            <div class="profile_picture_container">
+                <label for="profile_picture_input" class="profile_picture_label">
+                    <img class="name_picture" id="profile_picture_preview" src="/app/static/images/default-avatar.png" alt="Foto do time">
+                    <p>Selecionar Foto</p>
+                </label>
+                <input type="file" id="profile_picture_input" accept="image/*" style="display: none;">
+            </div>
+    
+            <div class="divider"></div>
+    
+            <div class="form_section">
+                <h1>Ser Árbitro</h1>
+                <input class="name_referee" type="text" id="name_referee" name="name_referee" placeholder="Nome do árbitro" required>
+                <div class="location">
+                    <select>
+                        <option value="" disabled selected>Selecione seu estado</option>
+                        <option>AC</option>
+                        <option>AL</option>
+                        <option>AP</option>
+                        <option>AM</option>
+                        <option>BA</option>
+                        <option>CE</option>
+                        <option>ES</option>
+                        <option>GO</option>
+                        <option>MA</option>
+                        <option>MT</option>
+                        <option>MS</option>
+                        <option>MG</option>
+                        <option>PA</option>
+                        <option>PB</option>
+                        <option>PR</option>
+                        <option>PE</option>
+                        <option>PI</option>
+                        <option>RJ</option>
+                        <option>RN</option>
+                        <option>RS</option>
+                        <option>RO</option>
+                        <option>RR</option>
+                        <option>SC</option>
+                        <option>SP</option>
+                        <option>SE</option>
+                        <option>TO</option>
+                    </select>
+                </div>
+                <div class="cost">
+                    <select>
+                        <option value="" disabled selected>Selecione sua média de custo</option>
+                        <option>Menos de R$30,00</option>
+                        <option>De R$30,00 a R$50,00</option>
+                        <option>De R$50,00 a R$100,00</option>
+                        <option>Mais de R$100,00</option>
+                    </select>
+                </div>
+                <div class="certificate">
+                    <input type="file" id="certificate" name="certificate" accept=".pdf,.jpg,.png, .docx, .doc"> <br>
+                    <label class="text_certificate" for="certificado">Carregar Certificado se possuir (PDF, DOC, JPG, PNG)</label>
+                    
+                </div>
+    
+                <div class="materials_container">
+                    <label>Possui materiais?</label>
+                    <label class="text_materials" for="text_materials">(cartões, apito, entre outros)</label>
+                    <div class="materials_checkbox">
+                    <label>
+                        <input type="radio" name="materiais" value="sim"> Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="materiais" value="não"> Não
+                    </label>
+                </div>
+            </div>    
+            <button class="button">Avançar</button>
+        </div>
+    </main>
 </body>
 </html>
