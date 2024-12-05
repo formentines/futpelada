@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutPelada - Home</title>
+    <link rel="stylesheet" href="/app/static/css/homePage.css">
+    <script defer src="/app/static/js/homePage.js"></script>
+    <!-- Link para o FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Sidebar -->
+    <nav class="menu-sidebar">
+      <ul>
+          <li>
+              <a href="#">
+                  <i class="fas fa-home icon-text"></i>
+                  <span class="menu-texto">Página Inicial</span>
+              </a>
+          </li>
+          <li class="has-subnav">
+              <a href="#">
+                  <i class="fas fa-search icon-text"></i>
+                  <span class="menu-texto">Buscar partidas</span>
+              </a>
+          </li>
+          <li class="has-subnav">
+              <a href="#">
+                  <i class="fas fa-plus-circle icon-text"></i>
+                  <span class="menu-texto">Criar</span>
+              </a>
+          </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-comments icon-text"></i>
+                <span class="menu-texto">Chat</span>
+              </a>
+            </li>
+          <li class="has-subnav">
+              <a href="#">
+                  <i class="fas fa-bell icon-text"></i>
+                  <span class="menu-texto">Notificações</span>
+              </a>
+          </li>
+          <li>
+             <a href="#">
+                  <i class="fas fa-cogs icon-text"></i>
+                  <span class="menu-texto">Configurações</span>
+              </a>
+          </li>
+      </ul>
+      <ul class="logout">
+          <li>
+             <a href="/app/templates/index.html">
+                  <i class="fas fa-sign-out-alt icon-text"></i>
+                  <span class="menu-texto">Sair</span>
+              </a>
+          </li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      
+      <!-- Seção de Perfil do Usuário -->
+      <section class="profile">
+          <h2>Perfil</h2>
+          <div class="profile-info">
+              <img src="profile-pic.jpg" alt="Foto de Perfil">
+              <p><strong>Nome do Usuário</strong></p>
+              <p>Email: usuario@dominio.com</p>
+              <p>Bio: Jogador apaixonado por futebol!</p>
+          </div>
+      </section>
+  
+      <!-- Seção de Lista de Partidas -->
+      <section class="partidas">
+        <h2>Partidas Marcadas</h2>
+        <!-- Aqui os cards de partidas serão carregados dinamicamente -->
+        <div class="lista-partidas">
+            <!-- Os cards de partidas serão inseridos aqui pelo JavaScript -->
+        </div>
+    </section>   
+  </main>
+  
+    <footer>
+        <p>&copy; 2024 FutPelada - Todos os direitos reservados</p>
+    </footer>
+    <script type="module" src="/app/static/js/homePage.js"></script>
+
+</body>
+</html>
+
