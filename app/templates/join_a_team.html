@@ -1,12 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNIR-SE A UM TIME</title>
+    <link rel="stylesheet" href="/app/static/css/join_a_team.css">
+    <script defer src="/app/static/js/join_a_team.js"></script>
 </head>
 <body>
-    <h1>{{ mensagem }}</h1>
-    <!-- Aqui você pode adicionar mais detalhes -->
+    <header class="main_header">
+        <div class="main_header_nav">    
+            <img class="logoheader" src="/app/static/images/logofutpeladaheader-removebg-preview.png" alt="logo futpelada">
+            <h2 class="nome_do_site">FUTPELADA</h2>
+        </div>
+    </header>
+
+    <main class="container">
+            <!-- Barra de busca -->
+            <section class="search-section">
+                <input type="text" id="searchInput" placeholder="Procurar times..." class="search-bar">
+                <button class="btn-search">Buscar</button>
+            </section>
+
+        <!-- Filtros -->
+        <section class="filter-section">
+            <select name="location" id="location" class="filter">
+                <option value="" disabled selected>Filtrar por estado</option>
+                <option>AC</option>
+                <option>AL</option>
+                <option>AP</option>
+                <option>AM</option>
+                <option>BA</option>
+                <option>CE</option>
+                <option>ES</option>
+                <option>GO</option>
+                <option>MA</option>
+                <option>MT</option>
+                <option>MS</option>
+                <option>MG</option>
+                <option>PA</option>
+                <option>PB</option>
+                <option>PR</option>
+                <option>PE</option>
+                <option>PI</option>
+                <option>RJ</option>
+                <option>RN</option>
+                <option>RS</option>
+                <option>RO</option>
+                <option>RR</option>
+                <option>SC</option>
+                <option>SP</option>
+                <option>SE</option>
+                <option>TO</option>
+            </select>
+            <select name="category" id="category" class="filter">
+                <option value="" disabled selected>Filtrar por categoria</option>
+                <option value="futebol">Futsal</option>
+                <option value="basquete">FutVolei</option>
+                <option value="volei">Society</option>
+                <option value="volei">Campo</option>
+
+            </select>
+            <select name="level" id="level" class="filter">
+                <option value="" disabled selected>Filtrar por nível</option>
+                <option value="novato">Iniciante</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+            </select>
+        </section>
+
+        <!-- Lista de times -->
+        <section class="team-list">
+            {% if times %}
+                <!-- Loop pelos times cadastrados -->
+                {% for time in times %}
+                <div class="team-card">
+                    <img src="{{ time['imagem'] }}" alt="Logo do Time" class="team-image">
+                    <div class="team-info">
+                        <h2>{{ time['nome'] }}</h2>
+                        <p>{{ time['descricao'] }}</p>
+                        <button class="btn-join">Solicitar Entrada</button>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Caso nenhum time esteja cadastrado -->
+                <div class="team-card empty">
+                    <div class="team-info">
+                        <h2>Nenhum time disponível</h2>
+                        <p>Times ainda não foram cadastrados. Volte mais tarde ou crie um time!</p>
+                    </div>
+                </div>
+            {% endif %}
+        </section>
+    </main>
 </body>
 </html>
