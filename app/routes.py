@@ -46,7 +46,7 @@ def init_app(app):
                 db.session.rollback()
                 return "Usuário ou E-mail já existe!", 400
 
-            return redirect(url_for('login'))
+            return redirect(url_for('affiliation'))
         
         return render_template('register.html')
     
