@@ -1,0 +1,4 @@
+SQLAlchemy 
+SQLAlchemy werkzeug
+itsdangerous
+Flask
