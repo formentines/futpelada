@@ -1,0 +1,200 @@
+/* General Styles */
+:root {
+  --MAIN: #00FF57;
+  --SUB: #005B1F;
+  --GRASS: #7CFC00;
+  --BACKGROUDS: #1A1A1A;
+  --FORMS: #2F2F2F;
+  --INPUTS: #BABABA;
+  --FONTE_PADRAO: "Montserrat", sans-serif;
+  --FONTE_DESTAQUE: "Bebas Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo em coluna */
+  min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+  background-color: var(--FORMS);
+  color: var(--INPUTS);
+  font-family: var(--FONTE_PADRAO);
+}
+
+/* Sidebar fixo */
+.menu-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 65px; /* Tamanho padrão */
+  height: 100%;
+  background-color: var(--BACKGROUDS);
+  transition: width 0.2s ease;
+  z-index: 1000;
+}
+.menu-sidebar:hover {
+  width: 250px; /* Expande ao passar o mouse */
+}
+.menu-sidebar ul {
+  padding: 20px 0;
+}
+.menu-sidebar li {
+  display: block;
+}
+.menu-sidebar li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+  padding: 10px 15px; /* Espaçamento interno para os itens */
+}
+.menu-sidebar li a:hover {
+  background-color: var(--SUB);
+}
+.menu-sidebar .icon-text {
+  font-size: 20px;
+  margin-right: 25px;
+}
+.menu-sidebar .menu-texto {
+  display: block;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.menu-sidebar ul.logout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer {
+  background-color: var(--SUB);
+  color: var(--INPUTS);
+  text-align: center;
+  padding: 15px;
+  font-size: 1em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave no rodapé */
+}
+
+/* Estilos para o conteúdo principal */
+.main-content {
+  margin-left: 65px; /* Espaço para o sidebar fixo */
+  padding: 20px;
+  flex: 1; /* Permite que o conteúdo ocupe o restante da tela */
+  overflow-y: auto; /* Para que o conteúdo role caso fique grande */
+}
+
+/* Estilo para o feed de publicações */
+.feed {
+  background-color: var(--BACKGROUDS);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.feed h2 {
+  margin-bottom: 10px;
+  color: var(--MAIN);
+}
+.post {
+  background-color: var(--BACKGROUDS);
+  color: var(--INPUTS);
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.post h3 {
+  color: var(--MAIN);
+}
+.post p {
+  color: var(--INPUTS);
+}
+
+/* Estilo para o perfil do usuário */
+.profile {
+  background-color: var(--BACKGROUDS);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.profile h2 {
+  color: var(--MAIN);
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-info img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+.profile-info p {
+  margin: 5px 0;
+}
+
+/* Estilo para a lista de partidas */
+.partidas {
+  margin: 20px;
+  padding: 10px;
+  background-color: var(--BACKGROUDS);
+  border-radius: 8px;
+  color: var(--INPUTS);
+}
+.partidas h2 {
+  font-family: var(--FONTE_DESTAQUE);
+  text-align: center;
+  color: var(--MAIN);
+}
+.partidas ul {
+  list-style: none;
+  padding: 0;
+}
+.partidas li {
+  padding: 10px;
+  border-bottom: 1px solid var(--FORMS);
+}
+.partidas li:last-child {
+  border-bottom: none;
+}
+
+.lista-partidas {
+  display: flex;
+  gap: 10px; /* Espaço entre os quadradinhos */
+  overflow-x: auto; /* Permite rolagem horizontal */
+  padding: 10px;
+  scroll-behavior: smooth; /* Rola suavemente */
+}
+.partida-card {
+  flex: 0 0 200px; /* Cada card terá largura fixa */
+  background-color: var(--FORMS);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: var(--INPUTS);
+  font-family: var(--FONTE_PADRAO);
+}
+.partida-card p {
+  margin: 5px 0;
+}
+.lista-partidas::-webkit-scrollbar {
+  height: 8px; /* Altura da barra de rolagem */
+}
+.lista-partidas::-webkit-scrollbar-thumb {
+  background: var(--MAIN);
+  border-radius: 4px;
+}

@@ -17,7 +17,7 @@
     font-family: var(--FONTE_PADRAO);
 }
 body{
-    background-color: var(--SUB);
+    background-color: var(--FORMS);
     margin: 0;
     height: 100vh;
     font-family: var(--FONTE_PADRAO);
@@ -27,9 +27,13 @@ body{
 }
 main {
     display: flex;
+    margin-top: 80px;
 }
 header {
     display: block;
+}
+label {
+    height: 20px;
 }
 .nome_do_site {
     color: white;
@@ -56,26 +60,136 @@ header {
 .logoheader {
     width: 80px;
 }
-.foto-perfil-label {
-    display: inline-block;
-    position: relative;
-    width: 200px; /* Tamanho do círculo */
-    height: 200px; /* Tamanho do círculo */
-    border-radius: 50%; /* Torna a área circular */
-    border: 2px dashed var(--FORMS); /* Borda do círculo */
-    background-color: var(--INPUTS); /* Cor de fundo */
+.infos {
+    padding: 0px;
+    justify-content: center;
+}
+.insert_info {
+    display: grid;
+    grid-template-columns: 1fr; /* Para uma coluna única */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    resize: none; /* Impede que o usuário altere o tamanho */
+  }
+input, button {
+    width: 100%; /* Para que ocupem toda a largura da coluna */
+    padding: 10px;
+    box-sizing: border-box;
+}
+h1 {
+    color: var(--MAIN);
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+::placeholder {
+    color: white
+    ;
+}
+.infos {
+    display: flex;
+}
+.main_form {
+    border: 2px solid var(--MAIN);
+    border-radius: 20px;
     text-align: center;
-    line-height: 100px; /* Centraliza o texto verticalmente */
-    cursor: pointer; /* Muda o cursor ao passar sobre a área */
+    padding: 20px;
+    justify-content: center;
+    height:390px;
 }
-.foto-perfil-label input[type="file"] {
-    display: none; /* Esconde o input de arquivo */
+.left_side {
+    display: grid;
+    margin-right:20px;
+    justify-items: center;
+    align-self: center;
+    height: 200px;
 }
-.foto-perfil {
-    font-size: 50px; /* Tamanho do ícone "+" */
-    color: var(--FORMS); /* Cor do ícone "+" */
-    position: absolute; /* Para centralizar o ícone */
-    top: 50%;
+.largura_inputs {
+    width: 300px;
+    height: 80px;
+}
+.create_button {
+    background-color: var(--MAIN);
+    margin-top: 55px;
+    width: 150px;
+    height: 42px;
+    border-radius: 10px;
+    border: none;
+}
+.create_button:hover {
+    background-color: #00cc45;
+}
+.categoria {
+    width: 100%;
+    padding: 10px;
+    background-color: #2F2F2F;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #00FF57;
+}
+.categoria:focus {
+    outline: none;
+    border-color: #7CFC00;
+}
+.nome_time {
+    background-color: var(--INPUTS);
+    height: 25px;
+    border-radius: 10px;
+    width: 100%;
+}
+textarea {
+    border-radius: 10px;
+}
+.nome_time, .team_social, select, textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #2F2F2F;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #00FF57;
+}
+select:focus {
+    outline: none;
+    border-color: #7CFC00;
+}
+.profile_picture_container {
+    text-align: center;
+    margin: 0px;
+    height: 100%;
+}
+.profile_picture_label {
+    display: inline-block;
+    cursor: pointer;
+    border: 2px dashed #00FF57;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+.profile_picture_label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile_picture_label p {
+    position: absolute;
+    bottom: 10px;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza o ícone */
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: none;
+}
+.profile_picture_label:hover p {
+    display: block;
+}
+.name_picture {
+    color: var(--FORMS);
 }
