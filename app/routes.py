@@ -1,10 +1,12 @@
 from flask import render_template, request, redirect, url_for, flash
 from flask_mail import Message
 from app import db, mail
-from models import Usuario
+from models import User, Team, Referee
 from itsdangerous import URLSafeTimedSerializer, BadSignature, SignatureExpired
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash
+from werkzeug.utils import secure_filename
+import os
 
 serializer = URLSafeTimedSerializer('sua-chave-secreta')
 
@@ -19,12 +21,16 @@ def verify_token(token, expiration=3600):
     except (SignatureExpired, BadSignature):
         return None
     
+def allow_file(filename):
+    allowed_extensions = {'png', 'jpg', 'jpeg', 'gif'}
+    return '.' in filename.rsplit('.', 1)[1].lower() in allowed_extensions
+    
 def init_app(app):
     @app.route('/')
     def index():
         return render_template('index.html')
     
-    @app.route('/register', methods=['GET', 'POST'])
+    @app.route('/register', methods=['GET', 'POST']) # Registro
     def register():
         if request.method == ['POST']:
             username = request.form.get('NOME DO USUÁRIO')
@@ -36,7 +42,7 @@ def init_app(app):
             if not username or not email or not birth_date or not password or not confirm_password:
                 return "Todos os campos são obrigatórios!", 400
             
-            new_user = Usuario(username=username, email=email, birth_date=birth_date, password=password)
+            new_user = User(username=username, email=email, birth_date=birth_date, password=password)
 
             try:
                 db.session.add(new_user)
@@ -50,7 +56,7 @@ def init_app(app):
         
         return render_template('register.html')
     
-    @app.route('/login', methods =['GET', 'POST'])
+    @app.route('/login', methods =['GET', 'POST']) # Login
     def login():
         if request.method == ['POST']:
             username = request.form.get('NOME DE USUÁRIO')
@@ -76,7 +82,7 @@ def init_app(app):
         
         return render_template('login.html')
     
-    @app.route('forgotpassword', methods = ['GET', 'POST'])
+    @app.route('forgotpassword', methods = ['GET', 'POST']) # Esqueci a Senha
     def forgotpassowrd():
         if request.method == ['POST']:
             username = request.form.get('NOME DE USUÁRIO')
@@ -87,9 +93,9 @@ def init_app(app):
                 return redirect(url_for('forgotpassword'))
 
             if username:
-                user = Usuario.query.filter_by(username=username).first()
+                user = User.query.filter_by(username=username).first()
             elif email:
-                user = Usuario.query.filter_by(email=email).first()
+                user = User.query.filter_by(email=email).first()
             
             if user:
                 token = generate_token(user.email)
@@ -111,18 +117,18 @@ def init_app(app):
         
         return render_template('forgotpassword.html')
 
-    @app.route('/resetpassword/<token>', methods = ['GET', 'POST'])
+    @app.route('/resetpassword/<token>', methods = ['GET', 'POST']) # Resetar Senha
     def resetpassword(token):
         email = verify_token(token)
-        if email is None:
-            flash('O token expirou ou é invalido!', 'danger')
+        if email is None: # Caso o token não seja válido, ele vai retornar erro
+            flash('O token expirou ou é invalido!', 'danger') 
             return redirect(url_for('forgotpassword'))
         
         if request.method == ['POST']:
             password = request.form.get('SENHA')
             hashed_password = generate_password_hash(password)
 
-            user = Usuario.query.filter_by(email=email).first()
+            user = User.query.filter_by(email=email).first()
             if user:
                 user.password_hash = hashed_password
                 db.session.commit
@@ -131,3 +137,50 @@ def init_app(app):
                 return redirect(url_for('index'))
         
         return render_template('resetpassword'), token==token   
+    
+    @app.route('/create_team', methods = ['GET', 'POST']) # Criar Time
+    def createteam():
+        if request.method == ['POST']:
+            name = request.form.get('NOME DO TIME') 
+            description = request.form.get('DESCRIÇÃO')
+            social_media = request.form.get('REDES SOCIAIS')
+            state = request.form.get('ESTADO')
+            category = request.form.get('CATEGORIA')
+
+            image = request.files.get('SELECIONAR IMAGEM')
+            team_shield = None
+            if image:
+                if allow_file(image.filename):
+                    filename = secure_filename(image.filename)
+                    teamshield = os.path.json(app.config['UPLOAD_FOLDER'], filename)
+                    image.save(teamshield)
+            
+            new_team = Team(name=name, description=description, team_shield=teamshield, social_media=social_media, category=category, state=state)
+            
+            db.session.add(new_team)
+            db.session.commit()
+            
+            return redirect(url_for('index'))
+        
+        return render_template('create_team.html')
+    
+    @app.route('/referee', methods =  ['GET', 'POST']) # Ser Juiz
+    def referee():
+        if request.methods == ['POST']:
+            name = request.form.get('NOME DO ÁRBITRO')
+            state = request.form.get('ESTADO')
+            average_cost = request.form.get('MÉDIA DE CUSTO')
+        
+            try:
+                average_cost = float(average_cost)
+            except ValueError:
+                return "O valor da média de custo deve ser um número válido", 400
+            
+            new_referee = Referee(name=name, state=state, average_cost=average_cost)
+
+            db.session.add(new_referee)
+            db.session.commit()
+
+            return redirect(url_for('homePage'))
+        
+        return render_template('referee.html')
