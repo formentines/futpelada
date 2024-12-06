@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
 :root {
     --MAIN: #00FF57;
     --SUB: #005B1F;
@@ -16,99 +14,60 @@
     --FONTE_DESTAQUE: "Bebas Neue", sans-serif;
 }
 
-body{
+body {
     background-image: url("/app/static/images/imagemdefundotelainicial.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
-    border: 0;
+    width: 100%;
+    height: 100%;
     margin: 0;
+    padding: 0;
+    font-family: var(--FONTE_PADRAO);
 }
-
-header {
-    display: block;
-}
-
 main {
     min-height: 100vh;
     display: flex;
     justify-content: center;
 }
-.logoheader {
-    width: 80px;
-    height: 80px;
-}
-
-.image img {
-    max-width: 100%; /* Para que a imagem se ajuste ao contêiner */
-    height: auto; /* Para manter a proporção */
-    margin-right: 210px;
-}
-.content {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    gap: 10px;
-    margin-left: 80px;
-    color: white;
-    font-size: 20px;
-    font-family: var(--FONTE_PADRAO);
-    width: 378px;
-    height: 250px;
-    text-align: center;
-    
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-}
-
-.text1, .text2 {
+html {
+    height: 100%;
     margin: 0;
+    padding: 0;
+    width: 100%;
 }
-.button_e {
-    padding: 10px 20px;
-    background-color: var(--MAIN);
-    color: var(--BACKGROUDS);
-    text-decoration: none;
+header {
+    display: block;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label {
+    color: white;
+    margin: 5px;
+    font-size: 12px;
+    width: 300px;
+    text-align: start;
+}
+input {
+    background-color: var(--INPUTS);
+    color: white;
     border-radius: 10px;
-    font-weight: bold;
+    border: none;
+    width: 300px;
+    height: 30px;
 }
-.button_c {
-    text-decoration: none; 
-    color: white;
-    font-family: var(--FONTE_PADRAO);
-}
-
-.button_c:hover {
-    color: var(--MAIN)
-}
-.button {
-    display: abslute;
-    background-color: var(--MAIN);
-    color: var(--BACKGROUDS); 
-    font-family: var(--FONTE_PADRAO);
-    padding: 15px 32px; 
-    text-align: center; 
-    text-decoration: none; 
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-.button:hover {
-    background-color: var(--SUB);
+h1 {
     color: white;
 }
-
 .nome_do_site {
     color: white;
     font-family: var(--FONTE_PADRAO);
     margin-left: 10px;
 }
-
 .main_header {
     background-color: var(--BACKGROUDS);
     position: fixed ;
@@ -120,24 +79,79 @@ main {
     border-bottom: .5px solid var(--labels-light-quaternary);
     box-sizing: border-box;
 }
-
+.button_cadastrese {
+    color: var(--MAIN);
+    text-decoration: none;
+    margin-right: 10px;
+    align-self: center;
+}
 .main_header_row {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .main_header_nav{
     display: flex;
     align-items: center;
     flex: 1;
+    height: 80px;
     box-sizing: border-box;
 }
-
+.a {
+    height: 80px;
+    width: 80px;
+}
 .main_header_nav_itens {
     display: flex;
     gap: 32px;
     align-items: center;
     flex: 1;
     justify-content: flex-end;
+    color: white;
+}
+.logoheader {
+    width: 80px;
+}
+.form-container {
+    background-color: var(--FORMS);
+    padding: 20px;
+    border-radius: 20px;
+    width: 350px;
+    height: 180px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+.forgot-password {
+    margin-bottom: 15px;
+    width: 300px;
+    text-align: start;
+}
+.forgot-password a {
+    color: white;
+    font-size: 11px;
+}
+.button_entrar {
+    padding: 10px;
+    background-color: var(--MAIN);
+    color: white;
+    
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 150px;
+    align-self: center;
+}
+.button_entrar:hover {
+     background-color: #00cc45;
+}
+.password-container {
+    position: relative;
+}
+.eye-icon {
+    position: absolute;
+    top: 50%; 
+    right: 10px; 
+    transform: translateY(-50%); 
+    width: 20px; 
+    height: 20px; 
 }

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutPelada - Home</title>
+    <link rel="stylesheet" href="/app/static/css/homePage.css">
+    <script defer src="/app/static/js/homePage.js"></script>
+    <!-- Link para o FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Sidebar -->
+    <nav class="menu-sidebar">
+      <ul>
+          <li>
+              <a href="#">
+                  <i class="fas fa-home icon-text"></i>
+                  <span class="menu-texto">Página Inicial</span>
+              </a>
+          </li>
+          <li class="has-subnav">
+              <a href="#">
+                  <i class="fas fa-search icon-text"></i>
+                  <span class="menu-texto">Buscar partidas</span>
+              </a>
+          </li>
+          <li class="has-subnav">
+            <a href="#">
+                <i class="fas fa fa-pencil icon-text"></i>
+                <span class="menu-texto">Gerenciar time</span>
+            </a>
+        </li>
+          <li class="has-subnav">
+              <a href="#">
+                  <i class="fas fa-plus-circle icon-text"></i>
+                  <span class="menu-texto">Criar</span>
+              </a>
+          </li>
+          <li class="has-subnav">
+        </li>
+        <li class="has-subnav">
+            <a href="#">
+                <i class="fas fa-comments icon-text"></i>
+                <span class="menu-texto">Chat</span>
+            </a>
+        </li>
+          <li class="has-subnav">
+              <a href="#">
+                  <i class="fas fa-bell icon-text"></i>
+                  <span class="menu-texto">Notificações</span>
+              </a>
+          </li>
+          <li>
+             <a href="#">
+                  <i class="fas fa-cogs icon-text"></i>
+                  <span class="menu-texto">Configurações</span>
+              </a>
+          </li>
+      </ul>
+      <ul class="logout">
+          <li>
+             <a href="/app/templates/index.html">
+                  <i class="fas fa-sign-out-alt icon-text"></i>
+                  <span class="menu-texto">Sair</span>
+              </a>
+          </li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      
+      <!-- Seção de Perfil do Usuário -->
+      <section class="profile">
+        <h2>Perfil</h2>
+        <div class="profile-info">
+            <!-- Foto de Perfil -->
+            <img src="profile-pic.jpg" alt="" id="profilePic">
+            <p class="text"><strong id="username">Nome do Usuário</strong></p>
+            <p class="text" id="email">Email: usuario@dominio.com</p>
+            <p class="text" id="bio">Bio: Jogador apaixonado por futebol!</p>
+            <button id="editProfileBtn">Editar Perfil</button>
+        </div>
+    
+        <!-- Formulário de edição de perfil -->
+        <div class="edit-profile-form" style="display: none;">
+            <h3 class="title">Editar Perfil</h3>
+            <form id="editProfileForm">
+                
+                <label for="editProfilePic" class="edit-profile-pic-label">
+                    <input type="file" id="editProfilePic" name="profilePic" accept="image/*">
+                </label>
+
+                <input type="text" placeholder="Digite seu nome de usuário" id="editUsername" name="username" value="">
+                
+                <input type="email" placeholder="Digite seu e-mail" id="editEmail" name="email" value="">
+                
+                
+                <textarea id="editBio" placeholder="Bio:" name="bio"></textarea>
+                
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </section>
+    
+  
+      <!-- Seção de Lista de Partidas -->
+      <section class="partidas">
+        <h2>Partidas Marcadas</h2>
+        <!-- Aqui os cards de partidas serão carregados dinamicamente -->
+        <div class="lista-partidas">
+            <!-- Os cards de partidas serão inseridos aqui pelo JavaScript -->
+        </div>
+    </section>   
+
+    <section class="manage-team">
+        <h2>Gerenciar Time</h2>
+        <div class="manage-team-actions">
+            <!-- Opção para adicionar jogadores -->
+            <div class="manage-option">
+                <h3>Adicionar Jogadores</h3>
+                <p>Convide novos jogadores para o seu time.</p>
+                <button class="manage-button">Adicionar Jogador</button>
+            </div>
+    
+            <!-- Opção para remover jogadores -->
+            <div class="manage-option">
+                <h3>Remover Jogadores</h3>
+                <p>Remova jogadores do seu time, se necessário.</p>
+                <button class="manage-button">Remover Jogador</button>
+            </div>
+    
+            <!-- Opção para ver a escalação -->
+            <div class="manage-option">
+                <h3>Ver Escalação</h3>
+                <p>Confira a lista de jogadores do seu time.</p>
+                <button class="manage-button">Ver Escalação</button>
+            </div>
+        </div>
+        <button class="button_editar">Editar Informações do Time</button>
+    </section>
+
+  </main>
+  
+    <footer>
+        <p>&copy; 2024 FutPelada - Todos os direitos reservados</p>
+    </footer>
+    <script type="module" src="/app/static/js/homePage.js"></script>
+
+</body>
+</html>
+

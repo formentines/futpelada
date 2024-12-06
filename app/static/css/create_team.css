@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --MAIN: #00FF57;
+    --SUB: #005B1F;
+    --GRASS: #7CFC00;
+    --BACKGROUDS: #1A1A1A;
+    --FORMS: #2F2F2F;
+    --INPUTS: #BABABA;
+
+    --FONTE_PADRAO: "Montserrat", sans-serif;
+    --FONTE_DESTAQUE: "Bebas Neue", sans-serif;
+}
+*{
+    font-family: var(--FONTE_PADRAO);
+}
+body{
+    background-color: var(--FORMS);
+    margin: 0;
+    height: 100vh;
+    font-family: var(--FONTE_PADRAO);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    display: flex;
+    margin-top: 80px;
+}
+header {
+    display: block;
+}
+label {
+    height: 20px;
+}
+.nome_do_site {
+    color: white;
+    font-family: var(--FONTE_PADRAO);
+    margin-left: 10px;
+}
+.main_header {
+    background-color: var(--BACKGROUDS);
+    position: fixed ;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-bottom: .5px solid var(--labels-light-quaternary);
+    box-sizing: border-box;
+}
+.main_header_nav{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    box-sizing: border-box;
+}
+.logoheader {
+    width: 80px;
+}
+.infos {
+    padding: 0px;
+    justify-content: center;
+}
+.insert_info {
+    display: grid;
+    grid-template-columns: 1fr; /* Para uma coluna única */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    resize: none; /* Impede que o usuário altere o tamanho */
+  }
+input, button {
+    width: 100%; /* Para que ocupem toda a largura da coluna */
+    padding: 10px;
+    box-sizing: border-box;
+}
+h1 {
+    color: var(--MAIN);
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+::placeholder {
+    color: white
+    ;
+}
+.infos {
+    display: flex;
+}
+.main_form {
+    border: 2px solid var(--MAIN);
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    height:390px;
+}
+.left_side {
+    display: grid;
+    margin-right:20px;
+    justify-items: center;
+    align-self: center;
+    height: 200px;
+}
+.largura_inputs {
+    width: 300px;
+    height: 80px;
+}
+.create_button {
+    background-color: var(--MAIN);
+    margin-top: 55px;
+    width: 150px;
+    height: 42px;
+    border-radius: 10px;
+    border: none;
+}
+.create_button:hover {
+    background-color: #00cc45;
+}
+.categoria {
+    width: 100%;
+    padding: 10px;
+    background-color: #2F2F2F;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #00FF57;
+}
+.categoria:focus {
+    outline: none;
+    border-color: #7CFC00;
+}
+.nome_time {
+    background-color: var(--INPUTS);
+    height: 25px;
+    border-radius: 10px;
+    width: 100%;
+}
+textarea {
+    border-radius: 10px;
+}
+.nome_time, .team_social, select, textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #2F2F2F;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #00FF57;
+}
+select:focus {
+    outline: none;
+    border-color: #7CFC00;
+}
+.profile_picture_container {
+    text-align: center;
+    margin: 0px;
+    height: 100%;
+}
+.profile_picture_label {
+    display: inline-block;
+    cursor: pointer;
+    border: 2px dashed #00FF57;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+.profile_picture_label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile_picture_label p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: none;
+}
+.profile_picture_label:hover p {
+    display: block;
+}
+.name_picture {
+    color: var(--FORMS);
+}

@@ -1,0 +1,368 @@
+/* General Styles */
+:root {
+  --MAIN: #00FF57;
+  --SUB: #005B1F;
+  --GRASS: #7CFC00;
+  --BACKGROUDS: #1A1A1A;
+  --FORMS: #2F2F2F;
+  --INPUTS: #BABABA;
+  --FONTE_PADRAO: "Montserrat", sans-serif;
+  --FONTE_DESTAQUE: "Bebas Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo em coluna */
+  min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+  background-color: var(--FORMS);
+  color: var(--INPUTS);
+  font-family: var(--FONTE_PADRAO);
+}
+
+/* Sidebar fixo */
+.menu-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 65px; /* Tamanho padrão */
+  height: 100%;
+  background-color: var(--BACKGROUDS);
+  transition: width 0.2s ease;
+  z-index: 1000;
+}
+.menu-sidebar:hover {
+  width: 250px; /* Expande ao passar o mouse */
+}
+.menu-sidebar ul {
+  padding: 20px 0;
+}
+.menu-sidebar li {
+  display: block;
+}
+.menu-sidebar li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+  padding: 10px 15px; /* Espaçamento interno para os itens */
+}
+.menu-sidebar li a:hover {
+  background-color: var(--SUB);
+}
+.menu-sidebar .icon-text {
+  font-size: 20px;
+  margin-right: 25px;
+  width: 20px;
+  height: 20px;
+}
+.menu-sidebar .menu-texto {
+  display: block;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.menu-sidebar ul.logout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer {
+  background-color: var(--SUB);
+  color: var(--INPUTS);
+  text-align: center;
+  padding: 15px;
+  font-size: 1em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave no rodapé */
+}
+
+/* Estilos para o conteúdo principal */
+.main-content {
+  margin-left: 65px; /* Espaço para o sidebar fixo */
+  padding: 20px;
+  flex: 1; /* Permite que o conteúdo ocupe o restante da tela */
+  overflow-y: auto; /* Para que o conteúdo role caso fique grande */
+}
+
+
+/* Estilo para o perfil do usuário */
+.profile {
+  padding: 20px;
+  background-color: var(--BACKGROUDS);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 1080px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.profile-info img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px dashed #00FF57;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.text {
+  justify-self: center;
+  color: white;
+  border-radius: 10px;
+  width: 300px;
+  border: 2px solid #00FF57;
+  background-color: var;
+  padding: 5px;
+  margin: 15px;
+}
+
+button {
+  background-color: #00FF57;
+  border: none;
+  color: black;
+  border-radius: 20px;
+  width: 200px;
+  height: 30px;
+}
+
+button:hover {
+  background-color: #005B1F;
+}
+
+.edit-profile-form {
+  margin-top: 20px;
+  background-color: var(--FORMS);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-form input, .edit-profile-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--INPUTS);
+  background-color: var(--INPUTS);
+}
+
+.title {
+  color: var(--MAIN);
+}
+
+/* Estilo para a lista de partidas */
+.partidas {
+  margin: 20px;
+  padding: 10px;
+  background-color: var(--BACKGROUDS);
+  border-radius: 8px;
+  color: var(--INPUTS);
+}
+.partidas h2 {
+  font-family: var(--FONTE_DESTAQUE);
+  text-align: center;
+  color: var(--MAIN);
+}
+.partidas ul {
+  list-style: none;
+  padding: 0;
+}
+.partidas li {
+  padding: 10px;
+  border-bottom: 1px solid var(--FORMS);
+}
+.partidas li:last-child {
+  border-bottom: none;
+}
+
+.lista-partidas {
+  display: flex;
+  gap: 10px; /* Espaço entre os quadradinhos */
+  overflow-x: auto; /* Permite rolagem horizontal */
+  padding: 10px;
+  scroll-behavior: smooth; /* Rola suavemente */
+}
+.partida-card {
+  flex: 0 0 200px; /* Cada card terá largura fixa */
+  background-color: var(--FORMS);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: var(--INPUTS);
+  font-family: var(--FONTE_PADRAO);
+}
+.partida-card p {
+  margin: 5px 0;
+}
+.lista-partidas::-webkit-scrollbar {
+  height: 8px; /* Altura da barra de rolagem */
+}
+.lista-partidas::-webkit-scrollbar-thumb {
+  background: var(--MAIN);
+  border-radius: 4px;
+}
+.edit-profile-form {
+  margin-top: 20px;
+  background-color: var(--FORMS);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-form input, .edit-profile-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Estilo do campo de foto de perfil */
+.edit-profile-pic-label {
+  display: inline-block;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 15px;
+  position: relative;
+  font-size: 14px;
+
+}
+
+.edit-profile-pic-label span {
+  display: block;
+  text-align: center;
+}
+
+.edit-profile-pic-label input[type="file"] {
+  display: none; /* Oculta o botão de "Escolher arquivo" */
+}
+
+/* Estilo para a imagem de perfil na área de edição */
+.edit-profile-pic-label::after {
+  content: "📷"; /* Adiciona um ícone de câmera */
+  padding-bottom: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+
+/* Imagem de perfil circular na edição */
+#editProfilePic {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+
+
+.manage-team {
+  padding: 40px;
+  background-color: var(--BACKGROUDS);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  max-width: 1200px;
+  text-align: center;
+  width: 1080px;
+}
+
+.manage-team h2 {
+  font-size: 2em;
+  color: var(--MAIN);
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.manage-team-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
+}
+
+.manage-option {
+  background-color: var(--FORMS);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.manage-option:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.manage-option h3 {
+  font-size: 1.5em;
+  color: var(--MAIN);
+  margin-bottom: 10px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.manage-option p {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.manage-button {
+  background-color: var(--MAIN);
+  border: none;
+  color: black;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  display: flex;              /* Flexbox ativado */
+  justify-content: center;    /* Alinha o texto horizontalmente */
+  align-items: center;        /* Alinha o texto verticalmente */
+  text-align: center;         /* Garante que o texto esteja centralizado */
+}
+
+.manage-button:hover {
+  background-color: #005B1F;
+}
+.button_editar {
+  justify-items: center;
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .manage-team-actions {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .manage-team-actions {
+      grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO</title>
+    <link rel="stylesheet" href="/app/static/css/register.css">
+</head>
+
+<body>
+    <header class="main_header">
+
+        <div class="main_header_nav">    
+            <a class="link_logo" href="/app/templates/index.html">
+                <img class="logoheader" src="/app/static/images/logofutpeladaheader-removebg-preview.png" alt="logo futpelada">
+            </a>
+            <h2 class="nome_do_site">FUTPELADA</h2>
+            <div class="main_header_nav_itens">
+                <p class="text">JÁ TEM UMA CONTA?</p>
+                <a href="/app/templates/login.html" class="button_entrar">ENTRE</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="all_inputs">
+
+            <form class="main_form" action="/submit" method="post">
+                <p>Criar uma conta</p>
+                <div class="alinhar">
+                    <label class="text_label" for="username">NOME COMPLETO:</label>
+                    <input class="input" type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+                </div>
+                    <div class="alinhar">
+                        <label class="text_label" for="username">NOME DE USUÁRIO:</label>
+                        <input class="input" type="text" id="username" name="username" placeholder="Escolha um nome de usuário" required>
+                    </div>
+                    
+                    <div class="alinhar">
+                        <label class="text_label" for="email">E-MAIL:</label>
+                        <input class="input" type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                        
+                            <fieldset>
+                                <legend>DATA DE NASCIMENTO:</legend>
+                                
+                                <div class="button_date">
+
+                                    <!-- aba de dia -->
+                                     <div class="label_input"> 
+                                        <label for="dia">DIA:</label>
+
+                                    <select id="dia" name="dia">
+                                        <option value="">--</option>
+                                        
+                                        <script>
+                                            for (let i = 1; i <= 31; i++) {
+                                                document.write(`<option value="${i}">${i}</option>`);
+                                            }
+                                        </script>
+
+                                    </select>
+                                     </div>
+                                    
+                                    <!-- aba de mês -->
+                                     <div class="label_input">
+                                        <label for="mes">MÊS:</label>
+
+                                    <select id="mes" name="mes">
+                                        <option value="">--</option>
+                                        <option value="1">Janeiro</option>
+                                        <option value="2">Fevereiro</option>
+                                        <option value="3">Março</option>
+                                        <option value="4">Abril</option>
+                                        <option value="5">Maio</option>
+                                        <option value="6">Junho</option>
+                                        <option value="7">Julho</option>
+                                        <option value="8">Agosto</option>
+                                        <option value="9">Setembro</option>
+                                        <option value="10">Outubro</option>
+                                        <option value="11">Novembro</option>
+                                        <option value="12">Dezembro</option>
+                                    </select>
+                                     </div>
+                                    
+                                    <!-- aba de ano -->
+                                     <div class="label_input">
+                                            <label for="ano">ANO:</label>
+
+                                        <select id="ano" name="ano">
+                                            <option value="">--</option>
+                                            <!-- últimos 100 anos -->
+                                            <script>
+                                                const currentYear = new Date().getFullYear();
+                                                for (let i = currentYear; i >= currentYear - 100; i--) {
+                                                    document.write(`<option value="${i}">${i}</option>`);
+                                                }
+                                            </script>
+                                        </select>
+                                     </div>
+
+                                 </div>
+                                
+                            </fieldset>
+
+                    <div class="alinhar">
+                        <label class="text_label_senha" for="password">SENHA:</label>
+                        <input class="input" type="password" id="password" name="password" placeholder="Escolha sua senha" required>
+                    </div>
+                    
+                    <div class="alinhar">
+                        <label class="text_label" for="confirm-password">CONFIRMAR SENHA:</label>
+                        <input class="input" type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a senha" required>
+                    </div>
+                    
+                    <button id="submitBtn" class="button_cadastrar" type="submit">CADASTRAR</button>
+            </form>
+        </div>
+    </main>
+        <script src="/app/static/js/register.js"></script>
+</body>
+</html>
