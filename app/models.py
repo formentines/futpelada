@@ -73,8 +73,8 @@ class Referee(db.model):
     
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True, nullable=False)
-    email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(200), nullable=False)
+    state = db.Column(db.String(100), nullable=False)
+    average_cost = db.Column(db.String(100), nullable=False)
 
     User = db.relationship('User', beckref=db.backref('Referee', lazy=True))
 
@@ -108,7 +108,7 @@ class Scheduling(db.model):
     def __repr__(self):    
         return f"<Agendamento(id={self.id}, horario={self.time}, data={self.date})>"
     
-class stats(db.model):
+class Stats(db.model):
     __tablename__ = 'stats'
 
     id = db.column(db.integer, primary_key=True)
@@ -122,12 +122,12 @@ class stats(db.model):
     red_cards = db.Column(db.Integer, nullable=False)
     MOTM = db.Column(db.Integer, nullable=False)
 
-    stats = db.relationship('User', beckref=db.backref('stats', lazy=True))
+    Stats = db.relationship('User', beckref=db.backref('stats', lazy=True))
     
     def __repr__(self):    
         return f"<stats(id={self.id})>"
 
-class team_stats(db.model):
+class Team_stats(db.model):
     __tablename__ = 'team_stats'
 
     id = db.column(db.integer, primary_key=True)
@@ -142,7 +142,7 @@ class team_stats(db.model):
     highest_stiker = db.column(db.string, nullable=False)
     highest_assister = db.column(db.string, nullable=False)
 
-    team_stats = db.relationship('team_stats', beckref=db.backref('equipe', lazy=True))
+    Team_stats = db.relationship('team_stats', beckref=db.backref('equipe', lazy=True))
 
     def __repr__(self):    
         return f"<team_stats(id={self.id})>"
